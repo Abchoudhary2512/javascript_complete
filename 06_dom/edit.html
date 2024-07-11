@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai and code</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JS</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(lanName){
+        const li = document.createElement('li')
+        li.innerHTML = `${lanName} is nuice`
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("CPP")
+    addLanguage("ruby")
+
+    function addOpti(lan){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(lan))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOpti("go")
+
+    //edit is good done with the replacewith >> innerHTML
+</script>
+</html>
