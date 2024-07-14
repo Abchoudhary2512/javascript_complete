@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Button Example</title>
+</head>
+<body>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+
+    <script>
+        let logging = false;
+let timeoutId;
+
+document.getElementById('startButton').addEventListener('click', () => {
+    logging = true;
+    startLogging();
+});
+
+document.getElementById('stopButton').addEventListener('click', () => {
+    logging = false;
+    clearTimeout(timeoutId);
+    console.log("Logging stopped.");
+});
+
+function startLogging() {
+    if (!logging) return;
+
+    console.log("Logging...");
+    timeoutId = setTimeout(startLogging, 1000); // Log every second
+}
+
+    </script>
+</body>
+</html>

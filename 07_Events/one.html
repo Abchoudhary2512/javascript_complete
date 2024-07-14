@@ -92,18 +92,23 @@
     // document.getElementById('images').addEventListener('click',function(e){
     //     console.log("clicked inside the url")
     // },true)
-    // document.getElementById('owl').addEventListener('click',function(e){
-    //     console.log("owl p click hua hai")
+    // document.getElementById('owl').addEventListener('dblclick',function(e){
+    //     console.log("owl p double click hua hai")})
        
     // },true)
     
-    document.querySelector('#images').addEventListener('click',function(e){
-        console.log(e);
-        let remove1 = e.target.parentNode;
-        remove1.remove(); 
-        
-    },false)
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //     console.log(e);
+    //     let remove1 = e.target.parentNode;
+    //     remove1.remove(); 
 
+    // },false)
+    // document.getElementById('owl').addEventListener(('dblclick',function(){
+    //     console.log("ha bhai do baar click kiya hai")
+    // }),false)
+
+    document.getElementById('owl').addEventListener('mousedown',function(e){
+        console.log("owl p down  click hua hai")})
 
 
     </script>
