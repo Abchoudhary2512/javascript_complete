@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events</title>
+</head>
+<body>
+  <button id="colorButton">Click me</button>
+  <div id="contextDiv" style="width:200px;height:200px;background-color:lightgray;">Right-click me</div>
+  <ul id="contextMenu" style="display:none;position:absolute;background-color:white;border:1px solid black;">
+    <li>Option 1</li>
+    <li>Option 2</li>
+    <li>Option 3</li>
+  </ul>
+
+  <div id="dblClickDiv" style="width:200px;height:200px;background-color:lightblue;">Double-click me</div>
+  <p>Double Click Count: <span id="dblClickCount">0</span></p>
+  <script>
+    const contextDiv = document.getElementById('contextDiv');
+    const contextMenu = document.getElementById('contextMenu');
+
+    contextDiv.oncontextmenu = function(event) {
+      event.preventDefault();
+      contextMenu.style.display = 'block';
+      contextMenu.style.left = `${event.pageX}px`;
+      contextMenu.style.top = `${event.pageY}px`;
+    };
+
+    document.onclick = function() {
+      contextMenu.style.display = 'none';
+    };
+    const button = document.getElementById('colorButton');
+    button.onclick = function() {
+      button.style.backgroundColor = 'red';
+    };
+    const dblClickDiv = document.getElementById('dblClickDiv');
+    const dblClickCount = document.getElementById('dblClickCount');
+    let count = 0;
+
+    dblClickDiv.onmouseup = function() {
+      count++;
+      dblClickCount.textContent = count;
+    };
+  </script>
+</body>
+</html>
